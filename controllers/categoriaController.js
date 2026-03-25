@@ -12,7 +12,8 @@ const getCategorias = async (request, response) => {
 const addCategoria = async (request, response) => {
     await addCategoriaDB(request.body)
         .then(data => response.status(200).json({
-            status: "success", message: "Categoria criada",
+            status: "success", 
+            message: "Categoria criada",
             objeto: data
         }))
         .catch(err => response.status(400).json({
@@ -24,7 +25,8 @@ const addCategoria = async (request, response) => {
 const updateCategoria = async (request, response) => {
     await updateCategoriaDB(request.body)
         .then(data => response.status(200).json({
-            status: "success", message: "Categoria alterada",
+            status: "success", 
+            message: "Categoria alterada",
             objeto: data
         }))
         .catch(err => response.status(400).json({
@@ -36,7 +38,8 @@ const updateCategoria = async (request, response) => {
 const deleteCategoria = async (request, response) => {
     await deleteCategoriaDB(parseInt(request.params.codigo))
         .then(data => response.status(200).json({
-            status: "success", message: data
+            status: "success", 
+            message: data
         }))
         .catch(err => response.status(400).json({
             status: 'error',
